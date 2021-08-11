@@ -1,6 +1,6 @@
 name: openmensa
 description: A library which provides simple access to OpenMensa's API services for Dart.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/ThexXTURBOXx/dart-openmensa
 repository: https://github.com/ThexXTURBOXx/dart-openmensa
 issue_tracker: https://github.com/ThexXTURBOXx/dart-openmensa/issues

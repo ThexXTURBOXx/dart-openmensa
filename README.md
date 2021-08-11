@@ -12,7 +12,7 @@ Add to ``pubspec.yaml``:
 
 ```yaml
 dependencies:
-  openmensa: ^0.0.1
+  openmensa: ^0.0.2
 ```
 
 A simple usage example:
