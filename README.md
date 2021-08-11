@@ -25,11 +25,11 @@ Future<void> main() async {
   // Initialize the API client
   final api = OpenMensaAPI();
 
-  // Get the first page of canteens with a limit of 1
-  final canteens11 = await api.getCanteens(page: 1, limit: 1);
+  // Get the first page of canteens with a limit of 4
   // Thanks to equatable, all objects can be easily
   // printed out with a nice representation
-  print(canteens11);
+  final canteens14 = await api.getCanteens(page: 1, limit: 4);
+  print(canteens14);
 
   // Get the second page of canteens with a limit of 1
   final canteens21 = await api.getCanteens(page: 2, limit: 1);
@@ -37,8 +37,8 @@ Future<void> main() async {
 
   // Thanks to equatable, all objects can be
   // easily compared by using the == operator
-  print(canteens21[0] == canteens14[1]);
-  print(canteens21[0] == canteens14[2]);
+  print(canteens21[0] == canteens14[1]); // true
+  print(canteens21[0] == canteens14[2]); // false
 
   // Get all available information about the meals
   // within the next few days from the canteen 196

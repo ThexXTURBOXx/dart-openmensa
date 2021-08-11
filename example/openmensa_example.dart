@@ -6,9 +6,9 @@ Future<void> main() async {
   final api = OpenMensaAPI();
 
   // Get the first page of canteens with a limit of 1
-  final canteens11 = await api.getCanteens(page: 1, limit: 1);
   // Thanks to equatable, all objects can be easily
   // printed out with a nice representation
+  final canteens11 = await api.getCanteens(page: 1, limit: 1);
   print(canteens11);
 
   // Get the second page of canteens with a limit of 1
