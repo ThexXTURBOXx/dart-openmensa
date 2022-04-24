@@ -10,15 +10,15 @@ class Day extends Equatable {
   final bool closed;
 
   /// Construct a new day instance.
-  const Day(
-    this.date,
-    this.closed,
-  );
+  const Day({
+    required this.date,
+    required this.closed,
+  });
 
   /// Read a day from parsed JSON.
-  static Day fromJson(dynamic json) => Day(
-        DateTime.parse(json['date'] as String),
-        json['closed'] as bool,
+  factory Day.fromJson(json) => Day(
+        date: DateTime.parse(json['date'] as String),
+        closed: json['closed'] as bool,
       );
 
   /// The day's properties.

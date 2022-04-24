@@ -1,4 +1,4 @@
-# OpenMensa
+# Dart OpenMensa
 
 <p align="center">
   <a href="https://travis-ci.com/ThexXTURBOXx/dart-openmensa"><img src="https://travis-ci.com/ThexXTURBOXx/dart-openmensa.svg?branch=main"></a>
@@ -12,8 +12,10 @@ Add to ``pubspec.yaml``:
 
 ```yaml
 dependencies:
-  openmensa: ^0.0.2
+  openmensa: ^1.0.0
 ```
+
+**See [here](https://github.com/ThexXTURBOXx/dart-openmensa/blob/main/example/openmensa_example.dart) for a more detailed example!**
 
 A simple usage example:
 

@@ -13,15 +13,15 @@ class DayMenu extends Equatable {
   final List<Meal> meals;
 
   /// Construct a new day menu instance.
-  const DayMenu(
-    this.day,
-    this.meals,
-  );
+  const DayMenu({
+    required this.day,
+    required this.meals,
+  });
 
   /// Read a day menu from parsed JSON.
-  static DayMenu fromJson(dynamic json) => DayMenu(
-        Day.fromJson(json),
-        parseDecodedList(json['meals'], Meal.fromJson),
+  factory DayMenu.fromJson(json) => DayMenu(
+        day: Day.fromJson(json),
+        meals: parseDecodedList(json['meals'], Meal.fromJson),
       );
 
   /// The day's properties.

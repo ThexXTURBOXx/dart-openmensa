@@ -29,27 +29,27 @@ class Meal extends Equatable {
   final String category;
 
   /// Construct a new meal instance.
-  const Meal(
-    this.id,
-    this.name,
-    this.notes,
-    this.studentPrice,
-    this.employeePrice,
-    this.pupilPrice,
-    this.othersPrice,
-    this.category,
-  );
+  const Meal({
+    required this.id,
+    required this.name,
+    required this.notes,
+    required this.studentPrice,
+    required this.employeePrice,
+    required this.pupilPrice,
+    required this.othersPrice,
+    required this.category,
+  });
 
   /// Read a meal from parsed JSON.
-  static Meal fromJson(dynamic json) => Meal(
-        json['id'] as int,
-        json['name'] as String,
-        (json['notes'] as List<dynamic>).map((n) => '$n').toList(),
-        json['prices']['students'] as double?,
-        json['prices']['employees'] as double?,
-        json['prices']['pupils'] as double?,
-        json['prices']['others'] as double?,
-        json['category'] as String,
+  factory Meal.fromJson(json) => Meal(
+        id: json['id'] as int,
+        name: json['name'] as String,
+        notes: (json['notes'] as List<dynamic>).map((n) => '$n').toList(),
+        studentPrice: json['prices']['students'] as double?,
+        employeePrice: json['prices']['employees'] as double?,
+        pupilPrice: json['prices']['pupils'] as double?,
+        othersPrice: json['prices']['others'] as double?,
+        category: json['category'] as String,
       );
 
   /// The day's properties.

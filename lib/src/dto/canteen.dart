@@ -22,23 +22,23 @@ class Canteen extends Equatable {
   final double latitude;
 
   /// Construct a new canteen instance.
-  const Canteen(
-    this.id,
-    this.name,
-    this.city,
-    this.address,
-    this.latitude,
-    this.longitude,
-  );
+  const Canteen({
+    required this.id,
+    required this.name,
+    required this.city,
+    required this.address,
+    required this.latitude,
+    required this.longitude,
+  });
 
   /// Read a canteen from parsed JSON.
-  static Canteen fromJson(dynamic json) => Canteen(
-        json['id'] as int,
-        json['name'] as String,
-        json['city'] as String,
-        json['address'] as String,
-        json['coordinates'][0] as double,
-        json['coordinates'][1] as double,
+  factory Canteen.fromJson(json) => Canteen(
+        id: json['id'] as int,
+        name: json['name'] as String,
+        city: json['city'] as String,
+        address: json['address'] as String,
+        latitude: json['coordinates'][0] as double,
+        longitude: json['coordinates'][1] as double,
       );
 
   /// The canteen's properties.
