@@ -33,10 +33,10 @@ class Meal extends Equatable {
     required this.id,
     required this.name,
     required this.notes,
-    required this.studentPrice,
-    required this.employeePrice,
-    required this.pupilPrice,
-    required this.othersPrice,
+    this.studentPrice,
+    this.employeePrice,
+    this.pupilPrice,
+    this.othersPrice,
     required this.category,
   });
 

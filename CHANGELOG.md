@@ -1,3 +1,7 @@
+## 2.0.0
+
+* `Meal` now has optional price parameters instead of required ones.
+
 ## 1.0.0
 
 * **BREAKING CHANGE**: Dart SDK 2.15.0+ is now required.
