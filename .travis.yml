@@ -1,4 +1,4 @@
 language: dart
 
 script:
-  - dartanalyzer --fatal-warnings --fatal-lints .
+  - dart analyze --fatal-warnings --fatal-infos .
