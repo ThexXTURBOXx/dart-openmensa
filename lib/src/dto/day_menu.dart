@@ -24,6 +24,12 @@ class DayMenu extends Equatable {
         meals: parseDecodedList(json['meals'], Meal.fromJson),
       );
 
+  Map<String, dynamic> toJson() => {
+        'date': day.date.toOpenMensaString(),
+        'closed': day.closed,
+        'meals': meals,
+      };
+
   /// The day's properties.
   /// See [Equatable.props] for more information.
   @override

@@ -24,3 +24,44 @@ T? parseDecodedObject<T>(dynamic decoded, JsonParser<T> parser) =>
 /// Decodes the given JSON string into a dynamic object.
 dynamic _decodeJson(String jsonString) =>
     jsonString != '' ? json.decode(jsonString) : null;
+
+extension OpenMensaDate on DateTime {
+  String toOpenMensaString() {
+    final y =
+        (year >= -9999 && year <= 9999) ? _fourDigits(year) : _sixDigits(year);
+    final m = _twoDigits(month);
+    final d = _twoDigits(day);
+    return '$y-$m-$d';
+  }
+
+  String _fourDigits(int n) {
+    final absN = n.abs();
+    final sign = n < 0 ? '-' : '';
+    if (absN >= 1000) {
+      return '$n';
+    }
+    if (absN >= 100) {
+      return '${sign}0$absN';
+    }
+    if (absN >= 10) {
+      return '${sign}00$absN';
+    }
+    return '${sign}000$absN';
+  }
+
+  String _sixDigits(int n) {
+    final absN = n.abs();
+    final sign = n < 0 ? '-' : '+';
+    if (absN >= 100000) {
+      return '$sign$absN';
+    }
+    return '${sign}0$absN';
+  }
+
+  String _twoDigits(int n) {
+    if (n >= 10) {
+      return '$n';
+    }
+    return '0$n';
+  }
+}

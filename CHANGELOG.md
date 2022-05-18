@@ -1,3 +1,7 @@
+## 2.1.0
+
+* All DTOs can now be encoded to JSON, i.e. a `toJson` method was added to all of them.
+
 ## 2.0.0
 
 * **BREAKING CHANGE**: Dart SDK 2.17.0+ (Flutter 3) is now required.

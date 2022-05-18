@@ -41,6 +41,14 @@ class Canteen extends Equatable {
         longitude: json['coordinates'][1] as double,
       );
 
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'city': city,
+        'address': address,
+        'coordinates': [latitude, longitude],
+      };
+
   /// The canteen's properties.
   /// See [Equatable.props] for more information.
   @override

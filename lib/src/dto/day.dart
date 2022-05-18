@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:openmensa/openmensa.dart';
 
 /// Models a day containing information about
 /// whether a canteen is closed or not.
@@ -20,6 +21,11 @@ class Day extends Equatable {
         date: DateTime.parse(json['date'] as String),
         closed: json['closed'] as bool,
       );
+
+  Map<String, dynamic> toJson() => {
+        'date': date.toOpenMensaString(),
+        'closed': closed,
+      };
 
   /// The day's properties.
   /// See [Equatable.props] for more information.

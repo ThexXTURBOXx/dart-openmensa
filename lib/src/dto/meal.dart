@@ -52,6 +52,19 @@ class Meal extends Equatable {
         category: json['category'] as String,
       );
 
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'notes': notes,
+        'prices': {
+          'students': studentPrice,
+          'employees': employeePrice,
+          'pupils': pupilPrice,
+          'others': othersPrice,
+        },
+        'category': category,
+      };
+
   /// The day's properties.
   /// See [Equatable.props] for more information.
   @override
