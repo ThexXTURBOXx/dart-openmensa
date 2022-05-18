@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
 import 'package:openmensa/src/dto/canteen.dart';
 import 'package:openmensa/src/dto/day.dart';
@@ -108,6 +110,13 @@ class OpenMensaAPI {
         ? Uri.http(apiBaseUrl, '$apiBasePath$endpoint', params)
         : Uri.https(apiBaseUrl, '$apiBasePath$endpoint', params);
     final response = await _client.get(uri);
+
+    if (response.statusCode != httpOkay) {
+      throw HttpException(
+        'Got unexpected status code ${response.statusCode}',
+        uri: uri,
+      );
+    }
     return response.statusCode != httpOkay ? '' : response.body;
   }
 }
