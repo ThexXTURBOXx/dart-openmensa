@@ -1,3 +1,7 @@
+## 2.1.1
+
+* Support newer Dart and `http` versions.
+
 ## 2.1.0
 
 * All DTOs can now be encoded to JSON, i.e. a `toJson` method was added to all of them.
