@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:http/http.dart' as http;
 import 'package:openmensa/src/dto/canteen.dart';
 import 'package:openmensa/src/dto/day.dart';
@@ -112,9 +110,9 @@ class OpenMensaAPI {
     final response = await _client.get(uri);
 
     if (response.statusCode != httpOkay) {
-      throw HttpException(
+      throw http.ClientException(
         'Got unexpected status code ${response.statusCode}',
-        uri: uri,
+        uri,
       );
     }
     return response.statusCode != httpOkay ? '' : response.body;
