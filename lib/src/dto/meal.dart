@@ -76,7 +76,7 @@ class Meal extends Equatable {
         employeePrice ?? 'null',
         pupilPrice ?? 'null',
         othersPrice ?? 'null',
-        category
+        category,
       ];
 
   /// The day should get an automatically generated
