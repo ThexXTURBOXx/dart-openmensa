@@ -1,4 +1,0 @@
-language: dart
-
-script:
-  - dart analyze --fatal-warnings --fatal-infos .

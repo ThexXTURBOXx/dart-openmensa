@@ -1,7 +1,7 @@
 # Dart OpenMensa
 
 <p align="center">
-  <a href="https://travis-ci.com/ThexXTURBOXx/dart-openmensa"><img src="https://travis-ci.com/ThexXTURBOXx/dart-openmensa.svg?branch=main"></a>
+  <a href="https://github.com/ThexXTURBOXx/dart-openmensa/actions/workflows/ci.yml"><img src="https://github.com/ThexXTURBOXx/dart-openmensa/actions/workflows/ci.yml/badge.svg"></a>
 </p>
 
 A library which provides simple access to OpenMensa's API services for Dart.
