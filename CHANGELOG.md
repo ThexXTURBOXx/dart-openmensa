@@ -1,3 +1,9 @@
+## 2.1.2
+
+* Support for Flutter Web.
+* Now throws `http.ClientException`s instead of `HttpException`s.
+* Add more entries in pubspec.
+
 ## 2.1.1
 
 * Support newer Dart and `http` versions.
