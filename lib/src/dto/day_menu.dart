@@ -19,7 +19,7 @@ class DayMenu extends Equatable {
   });
 
   /// Read a day menu from parsed JSON.
-  factory DayMenu.fromJson(json) => DayMenu(
+  factory DayMenu.fromJson(dynamic json) => DayMenu(
         day: Day.fromJson(json),
         meals: parseDecodedList(json['meals'], Meal.fromJson),
       );

@@ -41,7 +41,7 @@ class Meal extends Equatable {
   });
 
   /// Read a meal from parsed JSON.
-  factory Meal.fromJson(json) => Meal(
+  factory Meal.fromJson(dynamic json) => Meal(
         id: json['id'] as int,
         name: json['name'] as String,
         notes: (json['notes'] as List<dynamic>).map((n) => '$n').toList(),

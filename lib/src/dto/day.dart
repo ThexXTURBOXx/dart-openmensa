@@ -17,7 +17,7 @@ class Day extends Equatable {
   });
 
   /// Read a day from parsed JSON.
-  factory Day.fromJson(json) => Day(
+  factory Day.fromJson(dynamic json) => Day(
         date: DateTime.parse(json['date'] as String),
         closed: json['closed'] as bool,
       );

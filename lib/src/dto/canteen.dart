@@ -32,7 +32,7 @@ class Canteen extends Equatable {
   });
 
   /// Read a canteen from parsed JSON.
-  factory Canteen.fromJson(json) => Canteen(
+  factory Canteen.fromJson(dynamic json) => Canteen(
         id: json['id'] as int,
         name: json['name'] as String,
         city: json['city'] as String,
