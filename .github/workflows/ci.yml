@@ -9,22 +9,26 @@ jobs:
   check-format:
     name: Check format using flutter format
     runs-on: ubuntu-latest
-    container: ghcr.io/cirruslabs/flutter:stable
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
       - name: Check format
         run: dart format --output=none --set-exit-if-changed .
 
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    container: ghcr.io/cirruslabs/flutter:stable
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
       - name: Get dependencies for example
         run: flutter pub get
         working-directory: example
