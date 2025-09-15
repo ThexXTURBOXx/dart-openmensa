@@ -1,3 +1,7 @@
+## 2.1.4
+
+* Update `\[flutter_\]lints`
+
 ## 2.1.3
 
 * Update and simplify analyser rules
