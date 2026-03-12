@@ -12,7 +12,3 @@ _DayMenu _$DayMenuFromJson(Map<String, dynamic> json) => _DayMenu(
       .map((e) => Meal.fromJson(e as Map<String, dynamic>))
       .toList(),
 );
-
-Map<String, dynamic> _$DayMenuToJson(_DayMenu instance) => <String, dynamic>{
-  'meals': instance.meals,
-};

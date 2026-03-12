@@ -24,8 +24,6 @@ mixin _$DayMenu {
 @pragma('vm:prefer-inline')
 $DayMenuCopyWith<DayMenu> get copyWith => _$DayMenuCopyWithImpl<DayMenu>(this as DayMenu, _$identity);
 
-  /// Serializes this DayMenu to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
@@ -218,7 +216,7 @@ return $default(_that.day,_that.meals);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 
 class _DayMenu extends DayMenu {
   const _DayMenu({@JsonKey(readValue: _readRoot, includeToJson: false) required this.day, required final  List<Meal> meals}): _meals = meals,super._();
@@ -242,10 +240,7 @@ class _DayMenu extends DayMenu {
 @pragma('vm:prefer-inline')
 _$DayMenuCopyWith<_DayMenu> get copyWith => __$DayMenuCopyWithImpl<_DayMenu>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$DayMenuToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {

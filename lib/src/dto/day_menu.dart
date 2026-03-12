@@ -7,7 +7,7 @@ part 'day_menu.g.dart';
 
 /// Models a day menu containing information about
 /// a day and the daily available meals.
-@freezed
+@Freezed(toJson: false)
 abstract class DayMenu with _$DayMenu {
   const DayMenu._();
 
@@ -25,11 +25,7 @@ abstract class DayMenu with _$DayMenu {
       _$DayMenuFromJson(json);
 
   /// Custom toJson to flatten the 'day' object manually
-  @override
-  Map<String, dynamic> toJson() => {
-    ...day.toJson(),
-    ..._$DayMenuToJson(this as _DayMenu),
-  };
+  Map<String, dynamic> toJson() => {...day.toJson(), 'meals': meals};
 }
 
 Object? _readRoot(Map json, String key) => json;
