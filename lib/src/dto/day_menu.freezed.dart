@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$DayMenu {
 
 /// The day menu's day.
-@JsonKey(readValue: _readRoot) Day get day;/// The day menu's meals.
+ Day get day;/// The day menu's meals.
  List<Meal> get meals;
 /// Create a copy of DayMenu
 /// with the given fields replaced by the non-null parameter values.
@@ -50,7 +50,7 @@ abstract mixin class $DayMenuCopyWith<$Res>  {
   factory $DayMenuCopyWith(DayMenu value, $Res Function(DayMenu) _then) = _$DayMenuCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(readValue: _readRoot) Day day, List<Meal> meals
+ Day day, List<Meal> meals
 });
 
 
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(readValue: _readRoot)  Day day,  List<Meal> meals)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Day day,  List<Meal> meals)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DayMenu() when $default != null:
 return $default(_that.day,_that.meals);case _:
@@ -186,7 +186,7 @@ return $default(_that.day,_that.meals);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(readValue: _readRoot)  Day day,  List<Meal> meals)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Day day,  List<Meal> meals)  $default,) {final _that = this;
 switch (_that) {
 case _DayMenu():
 return $default(_that.day,_that.meals);case _:
@@ -206,7 +206,7 @@ return $default(_that.day,_that.meals);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(readValue: _readRoot)  Day day,  List<Meal> meals)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Day day,  List<Meal> meals)?  $default,) {final _that = this;
 switch (_that) {
 case _DayMenu() when $default != null:
 return $default(_that.day,_that.meals);case _:
@@ -221,11 +221,11 @@ return $default(_that.day,_that.meals);case _:
 @JsonSerializable()
 
 class _DayMenu extends DayMenu {
-  const _DayMenu({@JsonKey(readValue: _readRoot) required this.day, required final  List<Meal> meals}): _meals = meals,super._();
+  const _DayMenu({required this.day, required final  List<Meal> meals}): _meals = meals,super._();
   factory _DayMenu.fromJson(Map<String, dynamic> json) => _$DayMenuFromJson(json);
 
 /// The day menu's day.
-@override@JsonKey(readValue: _readRoot) final  Day day;
+@override final  Day day;
 /// The day menu's meals.
  final  List<Meal> _meals;
 /// The day menu's meals.
@@ -269,7 +269,7 @@ abstract mixin class _$DayMenuCopyWith<$Res> implements $DayMenuCopyWith<$Res> {
   factory _$DayMenuCopyWith(_DayMenu value, $Res Function(_DayMenu) _then) = __$DayMenuCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(readValue: _readRoot) Day day, List<Meal> meals
+ Day day, List<Meal> meals
 });
 
 

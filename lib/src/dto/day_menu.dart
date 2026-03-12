@@ -14,7 +14,7 @@ abstract class DayMenu with _$DayMenu {
   /// Construct a new day menu instance.
   const factory DayMenu({
     /// The day menu's day.
-    @JsonKey(readValue: _readRoot) required Day day,
+    required Day day,
 
     /// The day menu's meals.
     required List<Meal> meals,
@@ -24,5 +24,3 @@ abstract class DayMenu with _$DayMenu {
   factory DayMenu.fromJson(Map<String, dynamic> json) =>
       _$DayMenuFromJson(json);
 }
-
-Object? _readRoot(Map json, String key) => json;
