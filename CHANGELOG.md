@@ -1,3 +1,7 @@
+## 3.0.0-alpha.3
+
+* Fix \[de\]serialization of `DayMenu`s
+
 ## 3.0.0-alpha.2
 
 * Fix \[de\]serialization of `DayMenu`s
