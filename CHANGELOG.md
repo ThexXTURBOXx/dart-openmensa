@@ -1,3 +1,8 @@
+## 3.0.0-alpha.0
+
+* **BREAKING CHANGE**: Dart SDK 3.8.0+ is now required
+* **BREAKING CHANGE**: Migrate to `freezed` and `json_serializable`
+
 ## 2.1.4
 
 * Update `\[flutter_\]lints`
