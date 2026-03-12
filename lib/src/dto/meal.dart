@@ -1,87 +1,66 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'meal.freezed.dart';
+part 'meal.g.dart';
 
 /// Models a meal containing information about
 /// its metadata.
-class Meal extends Equatable {
-  /// The meal's internal ID.
-  final int id;
-
-  /// The meal's name.
-  final String name;
-
-  /// The meal's notes. Usually saves useful
-  /// information for vegetarians et al.
-  final List<String> notes;
-
-  /// The meal's price for students.
-  final double? studentPrice;
-
-  /// The meal's price for employees.
-  final double? employeePrice;
-
-  /// The meal's price for pupils.
-  final double? pupilPrice;
-
-  /// The meal's price for others.
-  final double? othersPrice;
-
-  /// The meal's category.
-  final String category;
+@freezed
+abstract class Meal with _$Meal {
+  const Meal._();
 
   /// Construct a new meal instance.
-  const Meal({
-    required this.id,
-    required this.name,
-    required this.notes,
-    this.studentPrice,
-    this.employeePrice,
-    this.pupilPrice,
-    this.othersPrice,
-    required this.category,
-  });
+  const factory Meal({
+    /// The meal's internal ID.
+    required int id,
+
+    /// The meal's name.
+    required String name,
+
+    /// The meal's notes. Usually saves useful
+    /// information for vegetarians et al.
+    required List<String> notes,
+
+    /// The meal's category.
+    required String category,
+
+    /// The meal's price for students.
+    @JsonKey(readValue: _readStudentPrice) double? studentPrice,
+
+    /// The meal's price for employees.
+    @JsonKey(readValue: _readEmployeePrice) double? employeePrice,
+
+    /// The meal's price for pupils.
+    @JsonKey(readValue: _readPupilPrice) double? pupilPrice,
+
+    /// The meal's price for others.
+    @JsonKey(readValue: _readOthersPrice) double? othersPrice,
+  }) = _Meal;
 
   /// Read a meal from parsed JSON.
-  factory Meal.fromJson(dynamic json) => Meal(
-        id: json['id'] as int,
-        name: json['name'] as String,
-        notes: (json['notes'] as List<dynamic>).map((n) => '$n').toList(),
-        studentPrice: json['prices']['students'] as double?,
-        employeePrice: json['prices']['employees'] as double?,
-        pupilPrice: json['prices']['pupils'] as double?,
-        othersPrice: json['prices']['others'] as double?,
-        category: json['category'] as String,
-      );
+  factory Meal.fromJson(Map<String, dynamic> json) => _$MealFromJson(json);
 
+  /// Converts a meal to JSON.
+  @override
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'notes': notes,
-        'prices': {
-          'students': studentPrice,
-          'employees': employeePrice,
-          'pupils': pupilPrice,
-          'others': othersPrice,
-        },
-        'category': category,
-      };
-
-  /// The day's properties.
-  /// See [Equatable.props] for more information.
-  @override
-  List<Object> get props => [
-        id,
-        name,
-        notes,
-        studentPrice ?? 'null',
-        employeePrice ?? 'null',
-        pupilPrice ?? 'null',
-        othersPrice ?? 'null',
-        category,
-      ];
-
-  /// The day should get an automatically generated
-  /// [toString] method, based on [props].
-  /// See [Equatable.stringify] for more information.
-  @override
-  bool get stringify => true;
+    'id': id,
+    'name': name,
+    'notes': notes,
+    'category': category,
+    'prices': {
+      'students': studentPrice,
+      'employees': employeePrice,
+      'pupils': pupilPrice,
+      'others': othersPrice,
+    },
+  };
 }
+
+Object? _readStudentPrice(Map json, String key) => json['prices']?['students'];
+
+Object? _readEmployeePrice(Map json, String key) =>
+    json['prices']?['employees'];
+
+Object? _readPupilPrice(Map json, String key) => json['prices']?['pupils'];
+
+Object? _readOthersPrice(Map json, String key) => json['prices']?['others'];

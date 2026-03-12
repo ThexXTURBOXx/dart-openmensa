@@ -1,62 +1,38 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-/// Models a canteen containing information about
-/// its metadata.
-class Canteen extends Equatable {
-  /// The canteen's internal ID.
-  final int id;
+part 'canteen.freezed.dart';
+part 'canteen.g.dart';
 
-  /// The canteen's name.
-  final String name;
-
-  /// The canteen's city.
-  final String city;
-
-  /// The canteen's address.
-  final String address;
-
-  /// The canteen's longitude.
-  final double longitude;
-
-  /// The canteen's latitude.
-  final double latitude;
+/// Models a canteen containing information about its metadata.
+@freezed
+abstract class Canteen with _$Canteen {
+  const Canteen._();
 
   /// Construct a new canteen instance.
-  const Canteen({
-    required this.id,
-    required this.name,
-    required this.city,
-    required this.address,
-    required this.latitude,
-    required this.longitude,
-  });
+  const factory Canteen({
+    /// The canteen's internal ID.
+    required int id,
+
+    /// The canteen's name.
+    required String name,
+
+    /// The canteen's city.
+    required String city,
+
+    /// The canteen's address.
+    required String address,
+
+    /// The canteen's coordinates (lat-long).
+    required List<double> coordinates,
+  }) = _Canteen;
 
   /// Read a canteen from parsed JSON.
-  factory Canteen.fromJson(dynamic json) => Canteen(
-        id: json['id'] as int,
-        name: json['name'] as String,
-        city: json['city'] as String,
-        address: json['address'] as String,
-        latitude: json['coordinates'][0] as double,
-        longitude: json['coordinates'][1] as double,
-      );
+  factory Canteen.fromJson(Map<String, dynamic> json) =>
+      _$CanteenFromJson(json);
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'city': city,
-        'address': address,
-        'coordinates': [latitude, longitude],
-      };
+  /// The canteen's latitude.
+  double get latitude => coordinates[0];
 
-  /// The canteen's properties.
-  /// See [Equatable.props] for more information.
-  @override
-  List<Object> get props => [id, name, city, address, latitude, longitude];
-
-  /// The canteen should get an automatically generated
-  /// [toString] method, based on [props].
-  /// See [Equatable.stringify] for more information.
-  @override
-  bool get stringify => true;
+  /// The canteen's longitude.
+  double get longitude => coordinates[1];
 }

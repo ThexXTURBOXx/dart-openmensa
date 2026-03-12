@@ -1,40 +1,27 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:openmensa/openmensa.dart';
+
+part 'day.freezed.dart';
+part 'day.g.dart';
 
 /// Models a day containing information about
 /// whether a canteen is closed or not.
-class Day extends Equatable {
-  /// The requested date.
-  final DateTime date;
-
-  /// Whether the canteen is closed or not.
-  final bool closed;
+@freezed
+abstract class Day with _$Day {
+  const Day._();
 
   /// Construct a new day instance.
-  const Day({
-    required this.date,
-    required this.closed,
-  });
+  const factory Day({
+    /// The requested date.
+    @JsonKey(fromJson: DateTime.parse, toJson: _dateToOpenMensaString)
+    required DateTime date,
+
+    /// Whether the canteen is closed or not.
+    required bool closed,
+  }) = _Day;
 
   /// Read a day from parsed JSON.
-  factory Day.fromJson(dynamic json) => Day(
-        date: DateTime.parse(json['date'] as String),
-        closed: json['closed'] as bool,
-      );
-
-  Map<String, dynamic> toJson() => {
-        'date': date.toOpenMensaString(),
-        'closed': closed,
-      };
-
-  /// The day's properties.
-  /// See [Equatable.props] for more information.
-  @override
-  List<Object> get props => [date, closed];
-
-  /// The day should get an automatically generated
-  /// [toString] method, based on [props].
-  /// See [Equatable.stringify] for more information.
-  @override
-  bool get stringify => true;
+  factory Day.fromJson(Map<String, dynamic> json) => _$DayFromJson(json);
 }
+
+String _dateToOpenMensaString(DateTime date) => date.toOpenMensaString();

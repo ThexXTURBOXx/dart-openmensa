@@ -1,4 +1,5 @@
-library openmensa;
+/// A library which provides simple access to OpenMensa's API services for Dart.
+library;
 
 export 'src/dto/canteen.dart';
 export 'src/dto/day.dart';
