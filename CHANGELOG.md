@@ -1,3 +1,7 @@
+## 3.0.0
+
+* *No changes in this specific version. See alpha versions for (breaking) changes.*
+
 ## 3.0.0-alpha.3
 
 * Fix \[de\]serialization of `DayMenu`s
