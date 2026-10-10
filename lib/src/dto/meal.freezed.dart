@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'meal.dart';
@@ -9,6 +9,7 @@ part of 'meal.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -37,16 +38,21 @@ $MealCopyWith<Meal> get copyWith => _$MealCopyWithImpl<Meal>(this as Meal, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Meal&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.notes, notes)&&(identical(other.category, category) || other.category == category)&&(identical(other.studentPrice, studentPrice) || other.studentPrice == studentPrice)&&(identical(other.employeePrice, employeePrice) || other.employeePrice == employeePrice)&&(identical(other.pupilPrice, pupilPrice) || other.pupilPrice == pupilPrice)&&(identical(other.othersPrice, othersPrice) || other.othersPrice == othersPrice));
+  final _this = this as Meal;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Meal&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&const DeepCollectionEquality().equals(other.notes, _this.notes)&&(identical(other.category, _this.category) || other.category == _this.category)&&(identical(other.studentPrice, _this.studentPrice) || other.studentPrice == _this.studentPrice)&&(identical(other.employeePrice, _this.employeePrice) || other.employeePrice == _this.employeePrice)&&(identical(other.pupilPrice, _this.pupilPrice) || other.pupilPrice == _this.pupilPrice)&&(identical(other.othersPrice, _this.othersPrice) || other.othersPrice == _this.othersPrice));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(notes),category,studentPrice,employeePrice,pupilPrice,othersPrice);
+int get hashCode {
+  final _this = this as Meal;
+  return Object.hash(runtimeType,_this.id,_this.name,const DeepCollectionEquality().hash(_this.notes),_this.category,_this.studentPrice,_this.employeePrice,_this.pupilPrice,_this.othersPrice);
+}
 
 @override
 String toString() {
-  return 'Meal(id: $id, name: $name, notes: $notes, category: $category, studentPrice: $studentPrice, employeePrice: $employeePrice, pupilPrice: $pupilPrice, othersPrice: $othersPrice)';
+  final _this = this as Meal;
+  return 'Meal(id: ${_this.id}, name: ${_this.name}, notes: ${_this.notes}, category: ${_this.category}, studentPrice: ${_this.studentPrice}, employeePrice: ${_this.employeePrice}, pupilPrice: ${_this.pupilPrice}, othersPrice: ${_this.othersPrice})';
 }
 
 
@@ -75,7 +81,7 @@ class _$MealCopyWithImpl<$Res>
 /// Create a copy of Meal
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? notes = null,Object? category = null,Object? studentPrice = freezed,Object? employeePrice = freezed,Object? pupilPrice = freezed,Object? othersPrice = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(Meal(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,notes: null == notes ? _self.notes : notes // ignore: cast_nullable_to_non_nullable
@@ -225,7 +231,7 @@ return $default(_that.id,_that.name,_that.notes,_that.category,_that.studentPric
 @JsonSerializable()
 
 class _Meal extends Meal {
-  const _Meal({required this.id, required this.name, required final  List<String> notes, required this.category, @JsonKey(readValue: _readStudentPrice) this.studentPrice, @JsonKey(readValue: _readEmployeePrice) this.employeePrice, @JsonKey(readValue: _readPupilPrice) this.pupilPrice, @JsonKey(readValue: _readOthersPrice) this.othersPrice}): _notes = notes,super._();
+  const _Meal({required this.id, required this.name, required  List<String> notes, required this.category, @JsonKey(readValue: _readStudentPrice) this.studentPrice, @JsonKey(readValue: _readEmployeePrice) this.employeePrice, @JsonKey(readValue: _readPupilPrice) this.pupilPrice, @JsonKey(readValue: _readOthersPrice) this.othersPrice}): _notes = notes,super._();
   factory _Meal.fromJson(Map<String, dynamic> json) => _$MealFromJson(json);
 
 /// The meal's internal ID.
@@ -267,16 +273,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Meal&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other._notes, _notes)&&(identical(other.category, category) || other.category == category)&&(identical(other.studentPrice, studentPrice) || other.studentPrice == studentPrice)&&(identical(other.employeePrice, employeePrice) || other.employeePrice == employeePrice)&&(identical(other.pupilPrice, pupilPrice) || other.pupilPrice == pupilPrice)&&(identical(other.othersPrice, othersPrice) || other.othersPrice == othersPrice));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Meal&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&const DeepCollectionEquality().equals(other.notes, _notes)&&(identical(other.category, category) || other.category == category)&&(identical(other.studentPrice, studentPrice) || other.studentPrice == studentPrice)&&(identical(other.employeePrice, employeePrice) || other.employeePrice == employeePrice)&&(identical(other.pupilPrice, pupilPrice) || other.pupilPrice == pupilPrice)&&(identical(other.othersPrice, othersPrice) || other.othersPrice == othersPrice));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_notes),category,studentPrice,employeePrice,pupilPrice,othersPrice);
+int get hashCode {
+    return Object.hash(runtimeType,id,name,const DeepCollectionEquality().hash(_notes),category,studentPrice,employeePrice,pupilPrice,othersPrice);
+}
 
 @override
 String toString() {
-  return 'Meal(id: $id, name: $name, notes: $notes, category: $category, studentPrice: $studentPrice, employeePrice: $employeePrice, pupilPrice: $pupilPrice, othersPrice: $othersPrice)';
+    return 'Meal(id: $id, name: $name, notes: $notes, category: $category, studentPrice: $studentPrice, employeePrice: $employeePrice, pupilPrice: $pupilPrice, othersPrice: $othersPrice)';
 }
 
 

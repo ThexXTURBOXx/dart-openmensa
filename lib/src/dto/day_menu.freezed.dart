@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'day_menu.dart';
@@ -9,6 +9,7 @@ part of 'day_menu.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -28,16 +29,21 @@ $DayMenuCopyWith<DayMenu> get copyWith => _$DayMenuCopyWithImpl<DayMenu>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DayMenu&&(identical(other.day, day) || other.day == day)&&const DeepCollectionEquality().equals(other.meals, meals));
+  final _this = this as DayMenu;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DayMenu&&(identical(other.day, _this.day) || other.day == _this.day)&&const DeepCollectionEquality().equals(other.meals, _this.meals));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,day,const DeepCollectionEquality().hash(meals));
+int get hashCode {
+  final _this = this as DayMenu;
+  return Object.hash(runtimeType,_this.day,const DeepCollectionEquality().hash(_this.meals));
+}
 
 @override
 String toString() {
-  return 'DayMenu(day: $day, meals: $meals)';
+  final _this = this as DayMenu;
+  return 'DayMenu(day: ${_this.day}, meals: ${_this.meals})';
 }
 
 
@@ -66,7 +72,7 @@ class _$DayMenuCopyWithImpl<$Res>
 /// Create a copy of DayMenu
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? day = null,Object? meals = null,}) {
-  return _then(_self.copyWith(
+  return _then(DayMenu(
 day: null == day ? _self.day : day // ignore: cast_nullable_to_non_nullable
 as Day,meals: null == meals ? _self.meals : meals // ignore: cast_nullable_to_non_nullable
 as List<Meal>,
@@ -219,7 +225,7 @@ return $default(_that.day,_that.meals);case _:
 @JsonSerializable(createToJson: false)
 
 class _DayMenu extends DayMenu {
-  const _DayMenu({@JsonKey(readValue: _readRoot, includeToJson: false) required this.day, required final  List<Meal> meals}): _meals = meals,super._();
+  const _DayMenu({@JsonKey(readValue: _readRoot, includeToJson: false) required this.day, required  List<Meal> meals}): _meals = meals,super._();
   factory _DayMenu.fromJson(Map<String, dynamic> json) => _$DayMenuFromJson(json);
 
 /// The day menu's day.
@@ -244,16 +250,18 @@ _$DayMenuCopyWith<_DayMenu> get copyWith => __$DayMenuCopyWithImpl<_DayMenu>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DayMenu&&(identical(other.day, day) || other.day == day)&&const DeepCollectionEquality().equals(other._meals, _meals));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DayMenu&&(identical(other.day, day) || other.day == day)&&const DeepCollectionEquality().equals(other.meals, _meals));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,day,const DeepCollectionEquality().hash(_meals));
+int get hashCode {
+    return Object.hash(runtimeType,day,const DeepCollectionEquality().hash(_meals));
+}
 
 @override
 String toString() {
-  return 'DayMenu(day: $day, meals: $meals)';
+    return 'DayMenu(day: $day, meals: $meals)';
 }
 
 

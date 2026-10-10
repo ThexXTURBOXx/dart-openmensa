@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'canteen.dart';
@@ -9,6 +9,7 @@ part of 'canteen.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -33,16 +34,21 @@ $CanteenCopyWith<Canteen> get copyWith => _$CanteenCopyWithImpl<Canteen>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Canteen&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.city, city) || other.city == city)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.coordinates, coordinates));
+  final _this = this as Canteen;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Canteen&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.city, _this.city) || other.city == _this.city)&&(identical(other.address, _this.address) || other.address == _this.address)&&const DeepCollectionEquality().equals(other.coordinates, _this.coordinates));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,city,address,const DeepCollectionEquality().hash(coordinates));
+int get hashCode {
+  final _this = this as Canteen;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.city,_this.address,const DeepCollectionEquality().hash(_this.coordinates));
+}
 
 @override
 String toString() {
-  return 'Canteen(id: $id, name: $name, city: $city, address: $address, coordinates: $coordinates)';
+  final _this = this as Canteen;
+  return 'Canteen(id: ${_this.id}, name: ${_this.name}, city: ${_this.city}, address: ${_this.address}, coordinates: ${_this.coordinates})';
 }
 
 
@@ -71,7 +77,7 @@ class _$CanteenCopyWithImpl<$Res>
 /// Create a copy of Canteen
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? city = null,Object? address = null,Object? coordinates = null,}) {
-  return _then(_self.copyWith(
+  return _then(Canteen(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,city: null == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
@@ -218,7 +224,7 @@ return $default(_that.id,_that.name,_that.city,_that.address,_that.coordinates);
 @JsonSerializable()
 
 class _Canteen extends Canteen {
-  const _Canteen({required this.id, required this.name, required this.city, required this.address, required final  List<double> coordinates}): _coordinates = coordinates,super._();
+  const _Canteen({required this.id, required this.name, required this.city, required this.address, required  List<double> coordinates}): _coordinates = coordinates,super._();
   factory _Canteen.fromJson(Map<String, dynamic> json) => _$CanteenFromJson(json);
 
 /// The canteen's internal ID.
@@ -252,16 +258,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Canteen&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.city, city) || other.city == city)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other._coordinates, _coordinates));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Canteen&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.city, city) || other.city == city)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.coordinates, _coordinates));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,city,address,const DeepCollectionEquality().hash(_coordinates));
+int get hashCode {
+    return Object.hash(runtimeType,id,name,city,address,const DeepCollectionEquality().hash(_coordinates));
+}
 
 @override
 String toString() {
-  return 'Canteen(id: $id, name: $name, city: $city, address: $address, coordinates: $coordinates)';
+    return 'Canteen(id: $id, name: $name, city: $city, address: $address, coordinates: $coordinates)';
 }
 
 
