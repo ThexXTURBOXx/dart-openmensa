@@ -1,3 +1,7 @@
+## 3.1.0
+
+* Update `freezed` to `4.x`
+
 ## 3.0.0
 
 * *No changes in this specific version. See alpha versions for (breaking) changes.*
