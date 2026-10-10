@@ -12,7 +12,7 @@ Add to ``pubspec.yaml``:
 
 ```yaml
 dependencies:
-  openmensa: ^3.0.0-alpha.0
+  openmensa: ^3.0.0
 ```
 
 **See [here](https://github.com/ThexXTURBOXx/dart-openmensa/blob/main/example/openmensa_example.dart) for a more detailed example!**
